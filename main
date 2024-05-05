@@ -1,0 +1,41 @@
+
+#include <stdio.h>
+#include <locale.h>
+#include <string.h>
+
+int main(){
+	setlocale(LC_ALL,"Portuguese");
+	char nome[10][50]; //declaração de um vetor de String no qual armazenaremos os nomes dos alunos
+	char consulta[50]; //declaração da variável que usaremos para consulta
+	int idade[10], AlunoExiste, ind; //declaração do vetor no qual armazenaremos as idades dos alunos
+	double media[10];
+	
+	//
+	for (int i=0;i<3;i++){
+		printf("DIGITE O NOME DO ALUNO: \n");
+		scanf("%s", nome[i]);
+		printf("DIGITE A IDADE DO ALUNO: \n");
+		scanf("%d", &idade[i]);
+		printf("DIGITE A MEDIA DO ALUNO: \n");
+		scanf("%lf", &media[i]);
+	}
+		printf("Consultar aluno por nome: ");
+		scanf("%s", &consulta);
+		
+		for (int i=0;i<5;i++){
+			if(strcmp(consulta,nome[i]) == 0){
+				AlunoExiste = 1;
+				ind = i;
+			}
+			
+						
+		}
+			if(AlunoExiste == 1){
+				printf("Aluno: %s\n", nome[ind]);
+				printf("Idade: %d\n", idade[ind]);
+				printf("Media: %.2f\n", media[ind]);
+			}
+			else{
+				printf("Aluno nao encontrado.");
+			}
+}
